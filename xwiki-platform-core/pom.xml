@@ -275,24 +275,11 @@
           -->
           <ignored>
             <!-- Remove the following ignores after we release the current version as final -->
-            <difference>
-              <className>com/xpn/xwiki/store/migration/DataMigrationManager</className>
-              <method>com.xpn.xwiki.store.migration.DataMigrationStatus getDataMigrationStatus()</method>
-              <differenceType>7012</differenceType>
-              <justification>New method to allow building an UI for reporting migration issues (mainly for sub-wiki)</justification>
-            </difference>
           </ignored>
           <excludes>
             <exclude>**/internal/**</exclude>
             <exclude>**/test/**</exclude>
             <!-- Remove the following excludes after we release the current version as final -->
-            <!-- Excluding the whole lucene plugin class as I could not succeed in expressing individual differences of type 7005 (Method Argument Type changed),
-                 it fails with java.util.Arrays$ArrayList cannot be cast to org.codehaus.mojo.clirr.Difference even though I declare the "method" and its new signature "to"
-                 There are 2 such differences :
-                   void init(com.xpn.xwiki.plugin.lucene.IndexUpdater, com.xpn.xwiki.XWikiContext) -> void init(com.xpn.xwiki.plugin.lucene.internal.IndexUpdater, com.xpn.xwiki.XWikiContext)
-               and void init(com.xpn.xwiki.plugin.lucene.IndexUpdater, com.xpn.xwiki.plugin.lucene.IndexRebuilder, com.xpn.xwiki.XWikiContext) -> void init(com.xpn.xwiki.plugin.lucene.internal.IndexUpdater, com.xpn.xwiki.plugin.lucene.internal.IndexRebuilder, com.xpn.xwiki.XWikiContext)
-                 -->
-            <exclude>com/xpn/xwiki/plugin/lucene/LucenePlugin</exclude>
           </excludes>
         </configuration>
       </plugin>
